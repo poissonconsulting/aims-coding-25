@@ -34,3 +34,7 @@ reprex::reprex({
 })
 
 # how might you make it minimal
+
+# the easiest way to include data is to use dput to 
+# produce the R code to generate the data
+dput(data.frame(x = 3, y = 1:10))
