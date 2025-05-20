@@ -24,7 +24,7 @@ vapply(ls, FUN = is.atomic, FUN.VALUE = TRUE)
 
 ## the purrr package provides lots of functions for vectorization
 
-# this install the purrr package
+# this loads the purrr package
 library(purrr)
 
 map(ls, is.atomic)
