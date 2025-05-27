@@ -5,6 +5,7 @@ format: html
 editor: visual
 editor_options: 
   chunk_output_type: console
+bibliography: references.bib
 ---
 
 ## Quarto
@@ -28,4 +29,4 @@ You can add options to executable code like this
 
 The `echo: false` option disables the printing of code (only output is displayed).
 
-An interesting citation is
+An interesting citation is \[@akbari2023\] or @bentley2013 or R Core Team - \@datasets.
