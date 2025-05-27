@@ -2,6 +2,15 @@
 
 *italic* **bold** ~~strikeout~~ `code`
 
+```         
+code block
+often with multiple lines of code
+```
+
+``` r
+r code block
+```
+
 superscript^2^ subscript~2~
 
 [underline]{.underline} [small caps]{.smallcaps}
@@ -42,3 +51,9 @@ superscript^2^ subscript~2~
 |--------------|---------------|
 | Content Cell | Content Cell  |
 | Content Cell | Content Cell  |
+
+## Equations
+
+$$P(x|\mu\sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
+
+Modified from [R 4 Data Science](https://r4ds.hadley.nz/)
