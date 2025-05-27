@@ -64,3 +64,32 @@ is.atomic(list)
 data <- data.frame(x = 1:3, y = c(0,4.5,7))
 data
 as.list(data)
+
+# pipes
+pow <- function(x, p) {
+  x^p
+}
+
+x <- 1:3
+x <- sum(sqrt((pow(x, 4))))
+x
+
+x <- 1:3
+x <- pow(x, 4)
+x <- sqrt(x)
+x <- sum(x)
+x
+
+x <- 1:3
+x <- x |> pow(4)
+x <- x |> sqrt()
+x <- x |> sum()
+x
+
+x <- 1:3
+x <- x |> 
+  pow(4) |> 
+  sqrt() |> 
+  sum()
+
+x
