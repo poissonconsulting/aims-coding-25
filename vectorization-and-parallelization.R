@@ -30,6 +30,8 @@ library(purrr)
 map(ls, is.atomic)
 
 # it allows the function to be specified in a more human readable form
+lapply(ls, FUN = is.atomic)
+map(ls, .f = is.atomic)
 map(ls, ~ is.atomic(.x))
 map(ls, \(x) is.atomic(x))
 
@@ -43,6 +45,23 @@ if(FALSE) { # so not automatically run
 
 # and access the name, index
 imap(ls, function(x,i) x == i)
+
+library(purrr)
+x <- 1:4
+y <- 4:1
+z <- c(1,NA,3,7)
+
+ls <- list(x, a2 = z, a3 = y)
+
+funny <- function(a1, a2, a3) {
+  (a1 - a2)^a3
+}
+
+funny(1, a2 = 2, a3 = 3)
+
+pmap(ls, funny)
+
+
 
 # other useful functions
 # https://rstudio.github.io/cheatsheets/purrr.pdf
