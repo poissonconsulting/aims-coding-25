@@ -56,4 +56,6 @@ superscript^2^ subscript~2~
 
 $$P(x|\mu\sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 
+> Quotes
+
 Modified from [R 4 Data Science](https://r4ds.hadley.nz/)
