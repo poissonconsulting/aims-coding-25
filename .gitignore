@@ -2,7 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
 
 *.html
 *_files
 *.pdf
+*.docx
+*_cache

@@ -1,0 +1,79 @@
+---
+title: "Diamond sizes"
+date: 2022-09-12
+format: html
+knitr:
+  opts_chunk:
+    comment: "#>"
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+
+smaller <- ggplot2::diamonds |> 
+  filter(carat <= 2.5)
+```
+
+We have data about `r nrow(diamonds)` diamonds. Only `r nrow(diamonds) - nrow(smaller)` are larger than 2.5 carats. The distribution of the remainder is shown below:
+
+```{r, fig.width = 4}
+#| label: plot-smaller-diamonds
+#| echo: false
+#| cache: true
+#| fig-asp: 0.618
+#| fig-align: center
+#| fig-cap: "This is an attempt at a stylish plot"
+
+ggplot(smaller, aes(x = carat)) + 
+  geom_freqpoly(binwidth = 0.01)
+
+diamonds <- ggplot2::diamonds |>
+  select(carat, cut, clarity)
+```
+
+```{r}
+#| label: diamond-data
+#| dependson: plot-smaller-diamonds
+#| cache: true
+#| echo: true
+#| warning: false
+
+x <- 10^2
+y <- 4
+print(y)
+warning("This code sucks")
+diamonds <- diamonds |>
+  slice(1:4)
+```
+
+Coral growth is important [@shinn1966]. But one should really read
+
+@bentley2013 but don't forget @zhangModelingNorthernAbalone2007a.
+
+The value of x is `r x`
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| 10   | 5    | NA   |
+| "x"  | 5    | 1    |
+| 2    | 3    | 0    |
+
+```{r}
+#| cache: true
+#| dependson: "diamond-data"
+fishes <- tribble(~Species, ~`Fish Length`,
+        "Perca", 300,
+        "Oncorhynchus", 400)
+
+Sys.sleep(8)
+
+diamonds |>
+  slice(1:20) |>
+  knitr::kable()
+```
+
+
