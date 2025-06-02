@@ -9,3 +9,6 @@
 *.pdf
 *.docx
 *_cache
+.Rdata
+.httr-oauth
+.quarto
