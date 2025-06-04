@@ -8,6 +8,8 @@
 
 ## Units of reproducible code and example data with documentation.
 ## Save you time!
+## 
+## We use the library() function to load 2 a package.
 
 install.packages("devtools")
 
@@ -50,6 +52,7 @@ usethis::use_git()
 ## create directory ~/foobar/scripts
 ## edit .RBuildignore with ^scripts$
 ## and then copy this packages.R script to ~/foobar/scripts
+## 
 
 # consider function
 strsplit1 <- function(x, split) {
@@ -94,17 +97,12 @@ devtools::document()
 
 devtools::check()
 
-## se the following to upload to a github repository for collaboration
-<https://r-pkgs.org/whole-game.html#use_github>
-
+## to create README.Rmd file
 usethis::use_readme_rmd()
 
-## to create README.Rmd file
-use_readme_rmd()
+## in github section will use
 
-devtools::check()
-
-devtools::install()
+use_github("organisationname")
 
 usethis::use_tidy_style()
 
@@ -126,9 +124,6 @@ x <- Sys.time()
 
 ## don't use library() or require()
 ## <https://r-pkgs.org/code.html#sec-code-r-landscape>
-
-## could talk about data?
-## 
 
 ## When a package is installed, everything in inst/ is copied into the top-level directory of the installed package (see Figure 3.1). 
 ## <https://r-pkgs.org/misc.html#sec-misc-inst>
