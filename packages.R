@@ -1,6 +1,6 @@
 ## All data structures built up from vectors
 ## for loops -> vectorization -> parallelization
-## objects copied on modification
+## objects copied on modification (exception are environments)
 ## <https://github.com/posit-dev/positron/issues/7864#issuecomment-2917028789>
 ## functions search for objects including other functions starting from where originally defined
 
@@ -9,7 +9,7 @@
 ## Units of reproducible code and example data with documentation.
 ## Save you time!
 ## 
-## We use the library() function to load 2 a package.
+## We use the library() function to load a package.
 
 install.packages("devtools")
 
