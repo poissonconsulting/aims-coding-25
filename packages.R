@@ -4,11 +4,11 @@
 ## <https://github.com/posit-dev/positron/issues/7864#issuecomment-2917028789>
 ## functions search for objects including other functions starting from where originally defined
 
-## material from <https://r-pkgs.org/>
+## material from <https://r-pkgs.org/> CC BY-NC-ND 4.0
 
 ## Units of reproducible code and example data with documentation.
 ## Save you time!
-## 
+##
 ## We use the library() function to load a package.
 
 install.packages("devtools")
@@ -35,7 +35,7 @@ options(
 ```
 
 ## Create package together
-## 
+##
 ## <https://r-pkgs.org/whole-game.html>
 
 
@@ -52,7 +52,7 @@ usethis::use_git()
 ## create directory ~/foobar/scripts
 ## edit .RBuildignore with ^scripts$
 ## and then copy this packages.R script to ~/foobar/scripts
-## 
+##
 
 # consider function
 strsplit1 <- function(x, split) {
@@ -100,6 +100,11 @@ devtools::check()
 ## to create README.Rmd file
 usethis::use_readme_rmd()
 
+## package documentation
+usethis::use_package_doc()
+
+devtools::document()
+
 ## in github section will use
 
 use_github("organisationname")
@@ -119,17 +124,19 @@ usethis::use_tidy_style()
 ## be suspicious of anything not in a function
 ## <https://r-pkgs.org/code.html#sec-code-when-executed>
 
-## Consider 
+## Consider
 x <- Sys.time()
 
 ## don't use library() or require()
 ## <https://r-pkgs.org/code.html#sec-code-r-landscape>
 
-## When a package is installed, everything in inst/ is copied into the top-level directory of the installed package (see Figure 3.1). 
+## Talk about dependencies
+
+## When a package is installed, everything in inst/ is copied into the top-level directory of the installed package (see Figure 3.1).
 ## <https://r-pkgs.org/misc.html#sec-misc-inst>
 
 ## common use is inst/extdata/ to make actual file available
-## also data-raw (raw data files so have work up) 
+## also data-raw (raw data files so have work up)
 ## usethis::use_data_raw()
 ## and data (R objects)
 ## usethis::use_data().
