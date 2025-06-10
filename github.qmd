@@ -20,11 +20,14 @@ Teaching from Murray Logan's instructions, tutorials and presentations.
 
 - Private vs public repositories.
 
+<https://github.com/bcgov/ssdtools>
+
 - Forks and PRs!
 - Issues!
-- Webpages
+- Webpage <https://bcgov.github.io/ssdtools/>
 - Projects
 
+- Co-Pilot
 - Notifications
 - Releases
 - Gists
