@@ -18,11 +18,14 @@ Teaching from Murray Logan's instructions, tutorials and presentations.
 
 # Further Uses GitHub
 
-- Forks and PRs!
-- Notifications
-- Contributions - good for looking for work.
 - Private vs public repositories.
+
+- Forks and PRs!
 - Issues!
-- Releases
+- Webpages
 - Projects
+
+- Notifications
+- Releases
 - Gists
+- Contributions - good for looking for work.

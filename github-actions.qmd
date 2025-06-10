@@ -1,0 +1,147 @@
+---
+title: "github-actions"
+format: html
+editor: visual
+---
+
+## GitHub Actions
+
+<https://docs.github.com/en/actions/about-github-actions/understanding-github-actions>
+
+> GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
+
+> GitHub Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository. For example, you can run a workflow to automatically add the appropriate labels whenever someone creates a new issue in your repository.
+
+> GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure.
+
+We use for 
+
+- R CMD CHECK on different version and OS'
+- R code coverage
+- Generate and deploy github website.
+- Generate and deploy bookdown sites.
+- Generate and deploy company website.
+- Pull data from BaseRow database using API and email as Excel file to collaborators.
+- Pull team members hours from timekeeping API and email out key stats.
+- Deploy shiny apps?
+
+Also 
+
+- Run styler on R code.
+
+## GitHub Actions for the R language
+
+<https://github.com/r-lib/actions>
+
+Github actions are yaml files.
+
+> “YAML Ain't Markup Language,” is a human-readable data serialization language. It is commonly used to create configuration files.
+
+Example action <https://github.com/r-lib/actions/blob/v2/examples/check-full.yaml>
+```
+# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+#
+# NOTE: This workflow is overkill for most R packages and
+# check-standard.yaml is likely a better choice.
+# usethis::use_github_action("check-standard") will install it.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+name: R-CMD-check.yaml
+
+permissions: read-all
+
+jobs:
+  R-CMD-check:
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macos-latest,   r: 'release'}
+
+          - {os: windows-latest, r: 'release'}
+          # use 4.0 or 4.1 to check with rtools40's older compiler
+          - {os: windows-latest, r: 'oldrel-4'}
+
+          - {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release'}
+          - {os: ubuntu-latest,  r: 'release'}
+          - {os: ubuntu-latest,  r: 'oldrel-1'}
+          - {os: ubuntu-latest,  r: 'oldrel-2'}
+          - {os: ubuntu-latest,  r: 'oldrel-3'}
+          - {os: ubuntu-latest,  r: 'oldrel-4'}
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: ${{ matrix.config.r }}
+          http-user-agent: ${{ matrix.config.http-user-agent }}
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
+          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+```
+
+### Workflow
+
+A workflow is a configurable automated process that will run one or more jobs.
+
+Workflows are defined in the `.github/workflows` directory in a repository. 
+
+A repository can have multiple workflows which can also reuse existing workflows.
+
+### Events
+
+An event is a specific activity in a repository that triggers a workflow run. 
+
+- pull request
+- opens an issue
+- pushes a commit
+- pushes a tag
+
+Or using cron.
+
+```
+on:
+  schedule:
+    - cron:  '30 5,17 * * *'
+```
+
+This example triggers the workflow every day at 5:30 and 17:30 UTC:
+
+### Jobs
+
+A job is a set of steps in a workflow that is executed on the same runner. 
+Each step is either a shell script that will be executed, or an action that will be run. 
+Steps are executed in order and are dependent on each other. 
+Since each step is executed on the same runner, you can share data from one step to another. 
+
+### Actions
+
+### Runners
+
+
+
+
+<https://github.com/r-lib/actions>
