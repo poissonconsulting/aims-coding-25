@@ -25,18 +25,3 @@ https://pcinereus.github.io/SUYRs_documents/10_pres_git.html#/title-slide
 
 Notes
   - At least conceptually git locally saves all copies of each file (as opposed to saving the changes = patches).
-
-  
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
