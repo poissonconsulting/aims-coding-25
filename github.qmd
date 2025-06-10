@@ -23,14 +23,17 @@ Teaching from Murray Logan's instructions, tutorials and presentations.
 <https://github.com/bcgov/ssdtools>
 
 - Issues!
-  - Checklists
+  - Checklists 
 - Forks
   - PRs!
 - Webpage <https://bcgov.github.io/ssdtools/>
 - Projects
 
-- Co-Pilot
-- Notifications
-- Releases
 - Gists
+- Notifications
 - Contributions - good for looking for work.
+
+```r
+usethis::use_tidy_upkeep_issue()
+usethis::issue_reprex_needed()
+```
