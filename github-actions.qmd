@@ -114,7 +114,6 @@ A repository can have multiple workflows which can also reuse existing workflows
 ### Events
 
 An event is a specific activity in a repository that triggers a workflow run. 
-
 - pull request
 - opens an issue
 - pushes a commit
@@ -148,4 +147,16 @@ A runner is a server that runs your workflows when they're triggered.
 Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows. 
 Each workflow run executes in a fresh, newly-provisioned virtual machine.
 
-<https://github.com/r-lib/actions>
+## GitHub Secrets
+
+## Examples in the Wild
+
+<https://github.com/bcgov/ssdtools/tree/main/.github/workflows>
+
+## Artefacts
+
+- JOSS paper on poissonconsulting/ssdtools@demo
+
+## Debugging
+
+Download 

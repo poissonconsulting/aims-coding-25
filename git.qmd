@@ -25,3 +25,5 @@ https://pcinereus.github.io/SUYRs_documents/10_pres_git.html#/title-slide
 
 Notes
   - At least conceptually git locally saves all copies of each file (as opposed to saving the changes = patches).
+  
+Also unstage lines or code blocks in RStudio.
