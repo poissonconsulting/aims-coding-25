@@ -1,0 +1,41 @@
+---
+title: "git"
+format: html
+editor: visual
+---
+
+## Material
+
+Teaching from Murray Logan's instructions, tutorials and presentations.
+
+<https://pcinereus.github.io/SUYRs_documents/>
+
+## What is git?
+
+Git is a version control system developed by Linus Torvald who is also the developer of the Linux OS. 
+He claims to name all his software after himself.
+
+## Setup git
+
+<https://pcinereus.github.io/SUYRs_documents/005_setup.html>
+
+## Using git
+
+https://pcinereus.github.io/SUYRs_documents/10_pres_git.html#/title-slide
+
+Notes
+  - At least conceptually git locally saves all copies of each file (as opposed to saving the changes = patches).
+
+  
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
