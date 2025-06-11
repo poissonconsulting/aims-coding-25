@@ -25,6 +25,7 @@ Teaching from Murray Logan's instructions, tutorials and presentations.
 - Issues!
   - Checklists 
 - Forks
+
   - PRs!
 - Closes #number
 - Webpage <https://bcgov.github.io/ssdtools/>
